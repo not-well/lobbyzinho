@@ -10,11 +10,23 @@ export const Default: StoryObj = {
   args: {
     firstPlayer: {
       id: '1',
-      name: 'Gato',
+      name: 'Makoto',
     },
     secondPlayer: {
       id: '2',
-      name: 'Makoto',
+      name: 'Akuma',
+    },
+  },
+  argTypes: {
+    firstPlayer: {
+      table: {
+        disable: true,
+      },
+    },
+    secondPlayer: {
+      table: {
+        disable: true,
+      },
     },
   },
 };

@@ -14,4 +14,21 @@ export const Default: StoryObj = {
     },
     playerPosition: 'first',
   },
+  argTypes: {
+    player: {
+      table: {
+        disable: true,
+      },
+    },
+    handleDelete: {
+      table: {
+        disable: true,
+      },
+    },
+    handleCheck: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
