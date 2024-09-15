@@ -1,4 +1,4 @@
-import { render, screen, userEvent } from '../../test-utils';
+import { render, screen, userEvent } from '@/test-utils';
 
 import FightingPlayer from '.';
 import { Player } from '@/shared/types/Player';

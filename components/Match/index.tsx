@@ -1,7 +1,5 @@
 import { Group, Space, Text } from '@mantine/core';
 
-import './styles.css';
-
 import { Player } from '@/shared/types/Player';
 import FightingPlayer from '../FightingPlayer';
 
