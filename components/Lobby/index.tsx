@@ -2,7 +2,7 @@ import Match from '../Match';
 
 import { Player } from '@/shared/types/Player';
 import { Queue } from '@/shared/classes/Queue';
-import { Table } from '@mantine/core';
+import { Table, Text } from '@mantine/core';
 
 type LobbyProps = {
   status: 'started' | 'stopped';
@@ -29,8 +29,12 @@ export default function Lobby(props: LobbyProps) {
       <Table>
         <Table.Tbody>
           {waitingPlayers.map((player: Player) => (
-            <Table.Tr key={player.id} data-testid="zzzz">
-              <Table.Td>{player.name}</Table.Td>
+            <Table.Tr key={player.id}>
+              <Table.Td>
+                <Text ta="left" fw="bold">
+                  {player.name}
+                </Text>
+              </Table.Td>
             </Table.Tr>
           ))}
         </Table.Tbody>
