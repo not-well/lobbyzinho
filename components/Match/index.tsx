@@ -10,13 +10,11 @@ export type MatchProps = {
 
 export default function Match(props: MatchProps) {
   return (
-    <Group justify="center" gap="xs">
+    <Group justify="space-between" gap="xl" mb="xl" grow>
       <FightingPlayer player={props.firstPlayer} playerPosition="first" />
-      <Space w="xl" />
-      <Text ta="center" fw="bold">
+      <Text ta="center" fw="bold" size="xl">
         VS
       </Text>
-      <Space w="xl" />
       <FightingPlayer player={props.secondPlayer} playerPosition="second" />
     </Group>
   );

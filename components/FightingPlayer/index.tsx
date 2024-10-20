@@ -19,7 +19,10 @@ export default function FightingPlayer(props: FightingPlayerProps) {
       p="xl"
       data-testid="fighting-player"
     >
-      <Group justify="space-between" grow>
+      <Text ta="center" fw="bold" truncate="end" mb="lg">
+        {props.player.name}
+      </Text>
+      <Group justify="space-between">
         <ActionIcon
           variant="light"
           color={props.playerPosition === 'first' ? 'red' : 'teal'}
@@ -34,9 +37,6 @@ export default function FightingPlayer(props: FightingPlayerProps) {
         >
           {props.playerPosition === 'first' ? <IconTrash /> : <IconCheck />}
         </ActionIcon>
-        <Text ta="center" fw="bold">
-          {props.player.name}
-        </Text>
         <ActionIcon
           variant="light"
           color={props.playerPosition === 'first' ? 'teal' : 'red'}

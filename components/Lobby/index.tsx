@@ -2,7 +2,7 @@ import Match from '../Match';
 
 import { Player } from '@/shared/types/Player';
 import { Queue } from '@/shared/classes/Queue';
-import { Table, Text } from '@mantine/core';
+import { Container, Table, Text } from '@mantine/core';
 
 type LobbyProps = {
   status: 'started' | 'stopped';
@@ -21,7 +21,7 @@ export default function Lobby(props: LobbyProps) {
   const waitingPlayers: Player[] = props.playersQueue.toArray();
 
   return (
-    <>
+    <Container>
       {props.status === 'started' && firstPlayer && secondPlayer && (
         <Match firstPlayer={firstPlayer} secondPlayer={secondPlayer} />
       )}
@@ -39,6 +39,6 @@ export default function Lobby(props: LobbyProps) {
           ))}
         </Table.Tbody>
       </Table>
-    </>
+    </Container>
   );
 }
