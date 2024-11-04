@@ -1,5 +1,6 @@
 import { ActionIcon, Flex } from '@mantine/core';
-import { IconInfoCircle, IconPlayerPlay, IconPlus } from '@tabler/icons-react';
+import { IconInfoCircle, IconPlayerPlay } from '@tabler/icons-react';
+import PlayerFormModal from '../PlayerFormModal';
 
 export default function AppMenu() {
   return (
@@ -7,9 +8,7 @@ export default function AppMenu() {
       <ActionIcon size="xl" color="teal">
         <IconPlayerPlay />
       </ActionIcon>
-      <ActionIcon size="xl" variant="default">
-        <IconPlus />
-      </ActionIcon>
+      <PlayerFormModal />
       <ActionIcon size="xl" variant="default">
         <IconInfoCircle />
       </ActionIcon>
