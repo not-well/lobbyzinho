@@ -19,6 +19,9 @@ export const Default: StoryObj = {
         disable: true,
       },
     },
+    status: {
+      name: 'Status',
+    },
   },
 
   render: (args) => {

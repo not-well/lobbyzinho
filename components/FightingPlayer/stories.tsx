@@ -20,6 +20,9 @@ export const Default: StoryObj = {
         disable: true,
       },
     },
+    playerPosition: {
+      name: 'Player position',
+    },
     handleDelete: {
       table: {
         disable: true,
