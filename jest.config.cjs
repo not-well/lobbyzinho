@@ -6,7 +6,11 @@ const createJestConfig = nextJest({
 
 const customJestConfig = {
   collectCoverage: true,
-  collectCoverageFrom: ['components/**/*.ts(x)?', '!components/**/stories.tsx'],
+  collectCoverageFrom: [
+    'components/**/*.ts(x)?',
+    '!components/**/stories.tsx',
+    '!components/**/*.stories.tsx',
+  ],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.cjs'],
   moduleNameMapper: {
     '^@/components/(.*)$': '<rootDir>/components/$1',
