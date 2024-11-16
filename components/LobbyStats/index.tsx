@@ -1,3 +1,4 @@
+import { LobbyStatus } from '@/shared/types/LobbyStatus';
 import { Stats } from '@/shared/types/Stats';
 import { ActionIcon, Drawer, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
@@ -5,7 +6,7 @@ import { IconInfoCircle, IconX } from '@tabler/icons-react';
 
 export type LobbyStatsProps = {
   stats: Stats;
-  lobbyStatus: 'started' | 'stopped';
+  lobbyStatus: LobbyStatus;
 };
 
 export function normalizePlayersNames(playersNames: string[]) {

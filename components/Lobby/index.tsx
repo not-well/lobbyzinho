@@ -3,9 +3,10 @@ import Match from '../Match';
 import { Player } from '@/shared/types/Player';
 import { Queue } from '@/shared/classes/Queue';
 import { Container, Table, Text } from '@mantine/core';
+import { LobbyStatus } from '@/shared/types/LobbyStatus';
 
 type LobbyProps = {
-  status: 'started' | 'stopped';
+  status: LobbyStatus;
   playersQueue: Queue<Player>;
 };
 
