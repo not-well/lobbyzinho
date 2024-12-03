@@ -1,0 +1,43 @@
+import { createContext, FunctionComponent, ReactNode, useMemo, useReducer } from 'react';
+
+function {{camelCase name}}Reducer(prevState: any, action: any) {
+  switch (action.type) {
+    case 'ACTION':
+      return {
+        ...prevState,
+        prop: action.prop,
+      };
+    default:
+      throw new Error("Action don't exists");
+  }
+}
+
+export const TestProvider: FunctionComponent<{children: ReactNode}> = ({ children }) => {
+  const [state, dispatch] = useReducer({{camelCase name}}Reducer, defaultValue);
+
+  const {{camelCase name}}Methods = useMemo(
+    () => ({
+      updateContext: (action: any) => dispatch({ type: 'ACTION', action }),
+    }),
+    []
+  );
+
+  return (
+    <{{pascalCase name}}Context.Provider value={ { ...{{camelCase name}}Methods, ...state } }>
+      {children}
+    </{{pascalCase name}}Context.Provider>
+  );
+};
+
+export default {{pascalCase name}}Provider;
+
+const defaultValue = {
+  property: null,
+  prop: null,
+};
+
+export const {{pascalCase name}}Context = createContext({
+  property: null,
+  prop: null,
+  updateContext: (action: any) => {},
+});

@@ -26,4 +26,21 @@ module.exports = (plop) => {
       },
     ],
   });
+  plop.setGenerator('context', {
+    description: 'Create a context',
+    prompts: [
+      {
+        type: 'input',
+        name: 'name',
+        message: 'Enter the context name: ',
+      },
+    ],
+    actions: [
+      {
+        type: 'add',
+        path: '../context/{{camelCase name}}.tsx',
+        templateFile: 'templates/context.tsx.hbs',
+      },
+    ],
+  });
 };
