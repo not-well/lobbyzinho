@@ -12,7 +12,7 @@ function {{camelCase name}}Reducer(prevState: any, action: any) {
   }
 }
 
-export const TestProvider: FunctionComponent<{children: ReactNode}> = ({ children }) => {
+export const {{pascalCase name}}Provider: FunctionComponent<{children: ReactNode}> = ({ children }) => {
   const [state, dispatch] = useReducer({{camelCase name}}Reducer, defaultValue);
 
   const {{camelCase name}}Methods = useMemo(
