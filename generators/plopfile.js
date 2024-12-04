@@ -40,7 +40,7 @@ module.exports = (plop) => {
     actions: [
       {
         type: 'add',
-        path: '../context/{{camelCase name}}.tsx',
+        path: '../context/{{camelCase name}}Context.tsx',
         templateFile: 'templates/context.tsx.hbs',
       },
     ],
