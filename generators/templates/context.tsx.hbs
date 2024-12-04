@@ -23,7 +23,7 @@ export const TestProvider: FunctionComponent<{children: ReactNode}> = ({ childre
   );
 
   return (
-    <{{pascalCase name}}Context.Provider value={ { ...{{camelCase name}}Methods, ...state } }>
+    <{{pascalCase name}}Context.Provider value={{openDoubleCurlyBraces}} ...{{camelCase name}}Methods, ...state {{closeDoubleCurlyBraces}}>
       {children}
     </{{pascalCase name}}Context.Provider>
   );

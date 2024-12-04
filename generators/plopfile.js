@@ -1,4 +1,6 @@
 module.exports = (plop) => {
+  plop.setHelper('openDoubleCurlyBraces', () => '{{');
+  plop.setHelper('closeDoubleCurlyBraces', () => '}}');
   plop.setGenerator('component', {
     description: 'Create a component',
     prompts: [
