@@ -5,6 +5,7 @@ import { DARK_MODE_EVENT_NAME } from 'storybook-dark-mode';
 import { MantineProvider, useMantineColorScheme } from '@mantine/core';
 import { theme } from '../theme';
 import { initialize, mswLoader } from 'msw-storybook-addon';
+import { handlers } from '../mocks/request-handlers';
 
 initialize();
 
@@ -31,5 +32,7 @@ export const decorators = [
     <MantineProvider theme={theme}>{renderStory()}</MantineProvider>
   ),
 ];
-
 export const loaders = [mswLoader];
+export const parameters = {
+  msw: { handlers },
+};
