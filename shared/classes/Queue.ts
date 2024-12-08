@@ -5,6 +5,10 @@ export class Queue<T> implements QueueInterface<T> {
     this.storage = firstItens;
   }
 
+  get size(): number {
+    return this.storage.length;
+  }
+
   enqueue(item: T): void {
     this.storage.push(item);
   }
@@ -13,11 +17,15 @@ export class Queue<T> implements QueueInterface<T> {
     return this.storage.shift();
   }
 
-  size(): number {
-    return this.storage.length;
-  }
-
   toArray(): T[] {
     return this.storage;
+  }
+
+  get(index: number): T {
+    if (index > this.size) {
+      throw new Error('Index out of bounds');
+    }
+
+    return this.storage[index];
   }
 }

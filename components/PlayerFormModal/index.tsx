@@ -1,11 +1,29 @@
+import { usePlayerAPI } from '@/api/usePlayerAPI';
+import { PlayerContext } from '@/context/playerContext';
 import { ActionIcon, Button, Group, Modal, TextInput } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconPlus } from '@tabler/icons-react';
+import { useContext, useState } from 'react';
 
 export default function PlayerFormModal() {
+  const [playerName, setPlayerName] = useState('');
+
   const [opened, { open, close }] = useDisclosure(false);
 
-  const handleSavePlayer = (): void => {
+  const { enqueuePlayer } = useContext(PlayerContext);
+
+  const { createPlayer } = usePlayerAPI();
+
+  const handleChange = (event: any): void => {
+    setPlayerName(event.target.value);
+  };
+
+  const handleSavePlayer = async (): Promise<void> => {
+    if (playerName !== '') {
+      const newPlayer = await createPlayer({ name: playerName });
+      enqueuePlayer(newPlayer);
+    }
+
     close();
   };
 
@@ -21,7 +39,7 @@ export default function PlayerFormModal() {
         }}
         centered
       >
-        <TextInput label="Player name" />
+        <TextInput label="Player name" onChange={handleChange} />
         <Group justify="flex-end" mt="md">
           <Button onClick={handleSavePlayer}>Save</Button>
         </Group>

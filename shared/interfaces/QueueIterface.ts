@@ -1,6 +1,7 @@
 interface QueueInterface<T> {
+  size: number;
   enqueue(item: T): void;
   dequeue(): T | undefined;
-  size(): number;
   toArray(): T[];
+  get(index: number): T;
 }
